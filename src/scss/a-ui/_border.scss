@@ -1,0 +1,45 @@
+@import "vars";
+
+.a-block:before,
+.a-desc-block:before,
+.a-modal .a-option:before,
+.a-search-result .a-item:before,
+.a-input-body:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.a-block:before {
+  left: $_*20;
+  right: 0;
+}
+.a-desc-block:before {
+  left: $_*20;
+  right: $_*20;
+}
+.a-modal .a-option:before {
+  left: $_*20;
+  right: 0;
+}
+.a-search-result .a-item:before {
+  left: $_*20;
+  right: 0;
+}
+.a-input-body:before {
+  left: 0;
+  right: 0;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .a-block:before,
+  .a-desc-block:before,
+  .a-modal .a-option:before,
+  .a-search-result .a-item:before,
+  .a-input-body:before {
+    transform: scaleY(0.5);
+    transform-origin: 0 0;
+  }
+}

@@ -1,0 +1,110 @@
+@import "vars";
+@import "mixins/text";
+
+.a-block {
+  position: relative;
+  padding-left: $_*20;
+  padding-bottom: $_*16;
+  display: flex;
+  background: #fff;
+}
+
+// TODO
+.a-block-icon {
+  position: relative;
+  z-index: 1;
+  width: $_*44;
+  height: $_*40;
+  padding-top: $_*8;
+  padding-left: $_*20;
+  // 在有icon时，icon跟标题之间没有空隙
+  margin-bottom: -$_*16;
+
+  //
+  // NOTE:
+  // 此img的宽度(或高度)需要计算好，公式为：
+  // width: 设计图上给的宽度px * 该设计图1px对应多少rem
+  //
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  // 让img能垂直居中
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.a-block-head {
+  @include text(18, light);
+  color: $color-primary;
+  padding-right: $_*16;
+  padding-top: $_*16;
+
+  .a-radio {
+    margin-top: -1*$_;
+  }
+}
+
+.a-block-body {
+  flex: 1;
+
+  .a-block-title {
+    @include text(18, medium);
+    padding-top: $_*16;
+    display: flex;
+    align-items: center;
+  }
+
+  .a-block-desc {
+    @include text(16, light);
+    margin-right: $_*8;
+    padding-top: $_*1;
+    color: #666;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+
+  .a-block-op {
+    @include text(16, light);
+    margin-top: $_*1;
+    color: #1188ff;
+  }
+
+  .a-block-action {
+    font-size: $_*18;
+    font-weight: 300;
+    color: #1188ff;
+    float: right;
+    clear: right;
+    margin-right: $_*16;
+    margin-top: $_*16;
+  }
+
+  .a-block-action.a-orange {
+    color: #f6a100;
+  }
+}
+
+
+.a-block-foot {
+  @include text(18, light);
+  padding-right: $_*16;
+  padding-top: $_*16;
+
+  .a-arrow {
+    margin-top: $_*10;
+  }
+
+  .a-switch {
+    margin-top: -$_*4;
+  }
+
+  .a-icon-add-c {
+    margin-top: -$_*4;
+  }
+}

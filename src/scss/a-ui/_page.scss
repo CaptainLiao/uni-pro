@@ -1,0 +1,18 @@
+// 页面标题
+@import "vars";
+@import "mixins/text";
+
+.a-page-head {
+  padding: $_*14 $_*18 $_*16 $_*20;
+
+  .a-page-title {
+    @include text(28, semibold);
+    color: #000;
+  }
+
+  .a-page-desc {
+    @include text(16, light);
+    padding-top: $_*4;
+    color: #666;
+  }
+}

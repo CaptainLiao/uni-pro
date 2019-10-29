@@ -1,0 +1,97 @@
+/**
+ * Flex布局小助手
+ *
+ * Resource:
+ * 1. https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+ * 2. https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
+ **/
+
+
+/**
+ * 1.在容器上声明的属性
+ */
+
+// 1.1 （★必须声明其一）主轴（堆叠）方向
+.fx-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.fx-col {
+  display: flex;
+  flex-direction: column;
+}
+
+// 1.2 是否允许换行
+.fx-wrap {
+  flex-wrap: wrap;
+}
+
+.fx-nowrap {
+  flex-wrap: nowrap;
+}
+
+// 1.3 主轴(Main axis)排列方式
+// 默认
+.fx-m-start {
+  justify-content: flex-start;
+}
+
+.fx-m-center {
+  justify-content: center;
+}
+
+.fx-m-end {
+  justify-content: flex-end;
+}
+
+.fx-m-between {
+  justify-content: space-between;
+}
+
+// 兼容性不佳
+.fx-m-around {
+  justify-content: space-around; 
+}
+
+/**
+ * 2. 在子元素上声明的属性
+ */
+
+// 2.2 子元素如何分配行空间 .fx-1 ~ .fx-7
+// 取消原有大小，完全重新分配
+@for $i from 0 through 7 {
+  .fx-#{$i} {
+    flex-basis: 0;
+    flex-grow: $i;
+  }
+}
+
+.fx-grow {
+	flex-grow: 1;
+}
+
+/**
+ * 3. 经常使用的快捷方式
+ * (谨慎添加哦)
+ */
+
+// 3.1 各种居中
+// 子元素行排列，垂直居中
+.fx-v-center {
+  display: flex;
+  align-items: center;
+}
+
+// 子元素行排列，水平居中
+.fx-h-center {
+  display: flex;
+  justify-content: center;
+}
+
+// 子元素行排列，水平垂直居中
+.fx-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

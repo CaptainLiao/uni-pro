@@ -1,0 +1,22 @@
+@import "vars";
+@import "mixins/text";
+
+// 小标题
+// NOTE: 这个小标题目前还没看到带动作的
+.a-section-head {
+  padding: $_*7.5 0;
+  padding-left: $_*20;
+
+  .a-section-title {
+    @include text(18, medium);
+    overflow: hidden;
+  }
+
+  .a-section-action {
+    @include text(18, light);
+    float: right;
+    clear: right;
+    margin-right: $_*16;
+    color: #1188ff;
+  }
+}

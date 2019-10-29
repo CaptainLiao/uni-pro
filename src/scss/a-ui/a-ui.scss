@@ -1,0 +1,35 @@
+@import "arrow";
+@import "icons";
+@import "switch";
+
+@import "colors";
+@import "text";
+@import "tag";
+@import "page";
+@import "section";
+@import "input";
+@import "block";
+@import "desc-block";
+@import "sub-action";
+@import "search";
+@import "button";
+@import "fix-bottom";
+@import "toast";
+@import "popup";
+@import "modal";
+@import "overlay";
+@import "radio";
+@import "utils";
+@import "spinner";
+@import "border";
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+input {
+  outline: 0;
+  border: 0;
+  background: transparent;
+}

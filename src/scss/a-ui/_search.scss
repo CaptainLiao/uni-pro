@@ -1,0 +1,26 @@
+.a-search-result {
+  .a-item {
+    position: relative;
+    padding: $_*12 0;
+    padding-left: $_*20;
+
+    .a-title {
+      @include text(16, medium);
+    }
+    .a-desc {
+      @include text(14, light);
+      margin-right: $_*72;
+      color: #666;
+    }
+    .a-type {
+      @include text(16, light);
+      float: right;
+      margin-right: $_*16;
+      color: #666;
+    }
+
+    &.a-nested {
+      padding-left: $_*40;
+    }
+  }
+}

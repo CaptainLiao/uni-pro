@@ -1,0 +1,19 @@
+@import "vars";
+@import "mixins/text";
+
+.a-desc-block {
+  position: relative;
+  padding: 0 $_*20;
+  background: #fff;
+
+  .a-block-title {
+    @include text(18, regular);
+    padding-top: $_*20;
+  }
+
+  .a-block-desc {
+    @include text(16, light);
+    padding-top: $_*8;
+    padding-bottom: $_*20;
+  }
+}

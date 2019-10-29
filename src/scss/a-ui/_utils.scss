@@ -1,0 +1,42 @@
+.a-ov-hidden {
+  overflow: hidden;
+}
+
+.a-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.a-bottom-space {
+  height: 4rem;
+}
+
+.a-invisible {
+  visibility: hidden;
+}
+
+.a-mask {
+  display: none; // 这个是没有动画的效果
+  // opacity: 0; // 这个是有动画的效果
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 500;
+
+  &.a-active {
+    display: block; // 这个是没有动画的效果
+    // opacity: 1; // 这个是有动画的效果
+    pointer-events: auto;
+  }
+
+  &.a-mask-transparent {
+    background: rgba(0, 0, 0, 0);
+  }
+}

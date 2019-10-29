@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import Vue from 'vue';
     export default Vue.extend({
         mpType: 'app',
@@ -14,6 +14,8 @@
     });
 </script>
 
-<style>
-    /*每个页面公共css */
+<style lang="scss">
+  @import "./scss/flex.scss";
+  @import "./scss/fit.scss";
+  @import "./scss/a-ui/a-ui.scss";
 </style>

@@ -1,0 +1,13 @@
+// 输入框
+@import "vars";
+
+.a-sub-action {
+  @include text(18, light);
+  color: $color-primary;
+  text-align: right;
+  padding: $_*4 $_*20;
+
+  &.a-disabled {
+    color: $color-gray;
+  }
+}

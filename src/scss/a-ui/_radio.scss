@@ -1,0 +1,53 @@
+// 选择按钮
+@import "vars";
+
+.a-radio {
+  position: relative;
+  box-sizing: border-box;
+  width: $_*26;
+  height: $_*26;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: background-color 20ms ease, border-color 20ms ease;
+
+  &.a-default {
+    background-color: #eee;
+    border-color: #cccccc;
+
+    &:before {
+      content: "";
+      display: block;
+      width: $_*8;
+      height: $_*4;
+      border-left: 2px solid #ccc;
+      border-bottom: 2px solid #ccc;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg)
+    }
+  }
+
+  &.a-disabled {
+    background-color: #eee;
+  }
+
+  &.a-checked {
+    background-color: #1188ff;
+    border-color: #1188ff;
+
+    &:before {
+      content: "";
+      display: block;
+      width: $_*8;
+      height: $_*4;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg)
+    }
+  }
+}

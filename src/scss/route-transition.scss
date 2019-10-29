@@ -1,0 +1,21 @@
+.slide-push-enter-active, .slide-pop-leave-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  transition: transform 350ms ease;
+}
+.slide-push-leave-active, .slide-pop-enter-active {
+  transition: transform 350ms ease;
+}
+.slide-push-enter-active, .slide-pop-leave-active {
+  z-index: 1;
+}
+.slide-push-enter, .slide-pop-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
+.slide-push-leave-to, .slide-pop-enter {
+  transform: translate3d(-100px, 0, 0);
+}

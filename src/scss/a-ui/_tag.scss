@@ -1,0 +1,17 @@
+@import "./vars";
+
+.a-tag, .a-tag-lightgray {
+  display: inline-block;
+  padding: 2px 4*$_;
+  color: #fff;
+  font-size: 12*$_;
+  line-height: 12*$_;
+  margin-left: 6*$_;
+  border-radius: 1*$_;
+}
+.a-tag {
+  background-color: $color-blue;
+}
+.a-tag-lightgray {
+  background-color: $color-lightgray;
+}

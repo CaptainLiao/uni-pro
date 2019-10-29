@@ -1,0 +1,67 @@
+/* 适配方案 */
+
+$area1-top: constant(safe-area-inset-top); // 兼容 iOS < 11.2
+$area1-bottom: constant(safe-area-inset-bottom); // 兼容 iOS < 11.2
+$area2-top: env(safe-area-inset-top); // 兼容 iOS >= 11.2
+$area2-bottom: env(safe-area-inset-bottom); // 兼容 iOS >= 11.2
+
+// 测试的时候注释上面的，打开下面的
+// $area1-top: 0;
+// $area1-bottom: 0;
+// $area2-top: 60rpx;
+// $area2-bottom: 60rpx;
+
+// 给主节点预留上下空间，这样正常流的元素无需添加适配
+page > view:not(.disable-global),
+.global-inset {
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+  }
+  &:before {
+    padding-top: $area1-top;
+    padding-top: $area2-top;
+  }
+  &:after {
+    padding-bottom: $area1-bottom;
+    padding-bottom: $area2-bottom;
+  }
+}
+
+// 对于定位元素，存在3种预留上下空间的方法
+// 1. global-top-padding 和 global-bottom-padding，使用 padding 填充空间
+// 2. global-top-border 和 global-bottom-border，使用 border 填充空间
+// 3. global-top-inset 和 global-bottom-inset，使用伪元素填充空间
+
+.global-top-padding {
+  padding-top: $area1-top;
+  padding-top: $area2-top;
+}
+.global-top-border {
+  border-top: solid $area1-top transparent;
+  border-top: solid $area2-top transparent;
+}
+.global-top-inset:before {
+  content: '';
+  display: block;
+  height: 0;
+  padding-top: $area1-top;
+  padding-top: $area2-top;
+}
+.global-bottom-padding {
+  padding-bottom: $area1-bottom;
+  padding-bottom: $area2-bottom;
+}
+.global-bottom-border {
+  border-bottom: solid $area1-bottom transparent;
+  border-bottom: solid $area2-bottom transparent;
+}
+.global-bottom-inset:after {
+  content: '';
+  display: block;
+  height: 0;
+  padding-bottom: $area1-bottom;
+  padding-bottom: $area2-bottom;
+}

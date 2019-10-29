@@ -1,0 +1,50 @@
+// 按钮
+@import "vars";
+@import "mixins/text";
+
+// 所有单行按钮（组）都是padding:8px，且按钮等宽
+.a-btn-line {
+  padding: $_*8 $_*20;
+  background-color: #fff;
+  display: flex;
+
+  .a-btn {
+    flex: 1 1 0;
+  }
+}
+.a-btn-line.a-fix-bottom {
+  padding: $_*8;
+}
+.a-btn-line-border {
+  @extend .a-btn-line;
+  border-top: 1px solid rgba(0,0,0,0.13);
+}
+.a-btn-line-border.a-fix-bottom {
+  padding: $_*8;
+}
+
+.a-btn {
+  @include text(18, regular);
+  color: #fff;
+  height: $_*48;
+  line-height: $_*48;
+  text-align: center;
+  background-color: #1188ff;
+  border: 1px solid rgba(0,0,0,0.13);
+  border-radius: 4px;
+  margin-left: $_*7;
+
+  &.a-btn-orange {
+    background-color: #f6a100;
+  }
+}
+.a-btn:first-of-type {
+  margin-left: 0;
+}
+
+.a-sub-btn {
+  @include text(18, regular);
+  height: $_*48;
+  line-height: $_*48;
+  padding: 0 $_*16;
+}

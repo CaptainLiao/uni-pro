@@ -1,0 +1,36 @@
+// 开关
+@import "vars";
+
+.a-switch {
+  width: $_*40;
+  height: $_*28;
+  box-sizing: border-box;
+  border-radius: $_*14;
+  border: 1px solid #ccc;
+  position: relative;
+  background: #eee;
+  will-change: background, border-color;
+  transition: background 100ms ease, border-color 100ms ease;
+
+  &:before {
+    content: "";
+    display: block;
+    background: #fff;
+    width: $_*26;
+    height: $_*26;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    transition: transform 0.25s ease;
+  }
+  &.a-checked {
+    background: #1188ff;
+    border-color: #1188ff;
+  }
+  &.a-checked:before {
+    transform: translate($_*12, 0);
+  }
+
+  &.a-disabled:before {
+    background: #eee;
+  }
+}

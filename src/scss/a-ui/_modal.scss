@@ -1,0 +1,49 @@
+//
+@import "vars";
+@import "mixins/text";
+
+.a-modal {
+  background-color: #fff;
+
+  .a-modal-head {
+    @include text(16, medium);
+    padding: $_*12 $_*20;
+    background-color: #f4f4f4;
+  }
+
+  .a-modal-body {
+    background: #fff;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.a-option {
+  @include text(16, light);
+  position: relative;
+  padding: $_*12 0;
+  padding-right: $_*16;
+  padding-left: $_*20;
+  display: flex;
+
+  &.a-disabled {
+    color: $color-gray;
+  }
+
+  &.a-checked:after {
+    content: "";
+    display: block;
+    width: $_*7;
+    height: $_*14;
+    border-right: 2px solid #1188ff;
+    border-bottom: 2px solid #1188ff;
+    transform: rotate(45deg);
+    margin-left: $_*8;
+  }
+}
+
+.a-option-body {
+  flex: 1;
+}

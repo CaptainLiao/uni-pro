@@ -1,0 +1,45 @@
+// 全局提示
+@import "vars";
+@import "mixins/text";
+
+.a-toast {
+  // min-height: $_*68;
+  min-height: $_*36;
+  box-sizing: border-box;
+  padding-left: $_*20;
+  padding-top: $_*32;
+  background-color: #667780;
+
+  &.a-alert,
+  &.a-error {
+    background-color: #ff3e4a;
+  }
+
+  &.a-success {
+    background-color: #45D66B;
+  }
+
+  .a-toast-msg {
+    @include text(15, light);
+    color: #fff;
+    margin-right: $_*48;
+    padding-bottom: $_*20;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  .a-toast-close {
+    float: right;
+    margin-right: $_*12;
+    padding: $_*4;
+
+    &:before {
+      content: "";
+      display: block;
+      width: $_*16;
+      height: $_*16;
+      transform: rotate(45deg);
+      background-image: linear-gradient(0deg, transparent 0, transparent 45%, #fff 45%, #fff 55%, transparent 55%), linear-gradient(90deg, transparent 0, transparent 45%, #fff 45%, #fff 55%, transparent 55%);
+    }
+  }
+}

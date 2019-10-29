@@ -1,0 +1,26 @@
+// 对话框
+@import "vars";
+@import "mixins/text";
+
+.a-popup {
+  background-color: #fff;
+  padding-top: $_*20;
+
+  .a-popup-title {
+    @include text(18, medium);
+    padding: 0 $_*18 $_*8 $_*20;
+  }
+
+  .a-popup-desc {
+    @include text(16, light);
+    padding: 0 $_*18 $_*30 $_*20;
+    min-height: $_*40;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  .a-popup-btns {
+    padding: $_*8;
+    display: flex;
+  }
+}

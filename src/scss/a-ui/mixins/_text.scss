@@ -1,0 +1,6 @@
+@import "../vars";
+
+@mixin text($size, $type: regular) {
+  font-size: $_ * $size;
+  font-weight: map_get($weight-map, $type);
+}

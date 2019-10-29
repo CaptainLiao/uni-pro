@@ -1,0 +1,43 @@
+@import "vars";
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "PingFangSC",
+  "Roboto", "Hiragino Sans GB", "Helvetica Neue", "STHeiti",
+  "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC",
+  "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC",
+  "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun,
+  sans-serif;
+}
+.a-text-digit {
+  font-family: "Avenir-Medium", Avenir, -apple-system, BlinkMacSystemFont,
+  "PingFang SC", "PingFangSC", "Roboto", "Hiragino Sans GB", "Helvetica Neue",
+  "STHeiti", "Microsoft YaHei", "Microsoft JhengHei",
+  "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN",
+  "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC",
+  "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+
+// Weight
+@each $type, $n in $weight-map {
+  .a-text-#{$type} {
+    font-weight: $n;
+  }
+}
+
+// Size
+@each $size in $sizes {
+  .a-text-#{$size} {
+    font-size: $_*$size;
+  }
+}
+
+// Align
+.a-text-left {
+  text-align: left;
+}
+.a-text-right {
+  text-align: right;
+}
+.a-text-center {
+  text-align: center;
+}
