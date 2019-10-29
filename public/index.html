@@ -1,28 +1,51 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>
-            <%= htmlWebpackPlugin.options.title %>
-        </title>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                document.documentElement.style.fontSize = document.documentElement.clientWidth / 20 + 'px'
-            })
-            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
-            document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />')
-        </script>
-        <link rel="stylesheet" href="<%= BASE_URL %>static/index.css" />
-    </head>
+<head>
+  <meta charset="utf-8">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <body>
-        <noscript>
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+
+  <!-- 页面描述(不超过150个字符) -->
+  <meta name="description" content="" />
+  <!-- 页面关键词 -->
+  <meta name="keywords" content="" />
+  <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+  <meta name="format-detection" content="telephone=no, email=no" />
+
+  <script src="<%= process.env.eruda %>"></script>
+  <script>
+    try {
+      eruda.init();
+    } catch(e) {}
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.documentElement.style.fontSize = document.documentElement.clientWidth / 20 + 'px'
+    })
+    var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports(
+      'top: constant(a)'))
+    document.write(
+      '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (
+        coverSupport ? ', viewport-fit=cover' : '') + '" />')
+
+  </script>
+  <link rel="stylesheet" href="<%= BASE_URL %>static/index.css" />
+</head>
+
+<body>
+  <noscript>
             <strong>Please enable JavaScript to continue.</strong>
         </noscript>
-        <div id="app"></div>
-        <!-- built files will be auto injected -->
-    </body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 
 </html>

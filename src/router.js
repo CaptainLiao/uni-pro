@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Router from 'vue-router';
+import Router from './libs/plugins/router';
 import routes from './routes';
 
 Vue.use(Router);
@@ -16,8 +16,7 @@ const router = new Router({
   scrollBehavior
 });
 
-router.beforeEach((to, next) => {
-  console.log(to)
+router.beforeEach((to, from, next) => {
   if (to && to.meta && to.meta.auth) {
     auth.get().then(
       () => {

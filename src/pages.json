@@ -5,6 +5,9 @@
     },
     {
       "path": "pages/hello"
+    },
+    {
+      "path": "pages/map"
     }
   ],
   "subPackages": []
