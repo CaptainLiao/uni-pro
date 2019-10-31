@@ -1,24 +1,24 @@
 <!--  -->
 <template>
-  <div class="box">hello world</div>
+<view>
+  <view class="item" v-for="(value,index) in iconType" :key="index">
+    <icon :type="value" size="20"/>
+    <text>{{value}}</text>
+  </view>
+</view>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-    };
-  },
-
-  components: {},
-
-  computed: {},
-
-  onLoad() {
-    console.log(this.$route.params)
-  },
-
-  methods: {}
+    data() {
+        return {
+            iconType: ['success']
+        }
+    },
+    onLoad() {
+      console.log(this.$Route)
+      this.iconType = ['success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search','clear']
+    }
 }
 
 </script>

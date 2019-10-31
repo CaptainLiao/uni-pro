@@ -1,8 +1,11 @@
-// 重置storage,必须在其他所有操作之前引入
+// 重置storage
 import './libs/init/version'
 
 import Vue from 'vue'
 import App from './App.vue'
+
+
+import './router'
 
 Vue.config.productionTip = false
 

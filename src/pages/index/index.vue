@@ -4,6 +4,9 @@
 		<view>
 			<text class="title">{{title}}</text>
 		</view>
+		<view>
+			<text class="title">appid {{appid}}</text>
+		</view>
 		<button @click="toHello">toHello</button>
 	</view>
 </template>
@@ -13,7 +16,8 @@ import Vue from 'vue';
 export default Vue.extend({
 	data() {
 		return {
-			title: 'Hello'
+			title: 'Hello',
+			appid: process.env.WX_APPID
 		}
 	},
 	onLoad() {
@@ -21,9 +25,9 @@ export default Vue.extend({
 	},
 	methods: {
 		toHello() {
-			this.$router.push({
+			this.$Router.push({
 				path: '/pages/hello',
-				params: {
+				query: {
 					text: 'Fuck you'
 				}
 			})

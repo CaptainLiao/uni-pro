@@ -9,5 +9,16 @@
     {
       "path": "pages/map"
     }
-  ]
+  ],
+
+  "globalStyle": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "演示",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "usingComponents":{
+        "collapse-tree-item":"/components/collapse-tree-item"
+    }
+  }
 }

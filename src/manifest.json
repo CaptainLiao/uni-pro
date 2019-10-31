@@ -12,18 +12,6 @@
       "urlCheck": true
     }
   },
-  "mp-alipay": {
-    "usingComponents": true
-  },
-  "mp-baidu": {
-    "usingComponents": true
-  },
-  "mp-toutiao": {
-    "usingComponents": true
-  },
-  "mp-qq": {
-    "usingComponents": true
-  },
   
   "h5": {
     "template": "public/index.html",

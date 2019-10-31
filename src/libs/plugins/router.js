@@ -1,4 +1,3 @@
-// 用于小程序
 import qs from 'qs';
 
 let _index = 0;
@@ -61,7 +60,7 @@ function install(Vue) {
     }
   });
 
-  Object.defineProperty(Vue.prototype, '$route', {
+  Object.defineProperty(Vue.prototype, '$Route', {
     get() {
       return this._route;
     }
@@ -122,7 +121,7 @@ Router.prototype.proxy = function proxy(opt, fn, noQuery) {
     // 偷懒...name也可以匹配path，因为vue-router只有name才能传params
     matched = this.nameMap[name] || this.pathMap[name] || null;
   } else {
-    let qi = path.indexOf('?');
+    const qi = path.indexOf('?');
     if (qi >= 0) {
       // path带参数
       query = {
@@ -140,28 +139,33 @@ Router.prototype.proxy = function proxy(opt, fn, noQuery) {
   }
 
   if (noQuery) {
-    fn({
-      url: matched.path
-    });
-  } else {
-    const data = {
-      path: matched.path,
-      query: query || {},
-      params: params || {},
-      meta: matched.meta
-    };
-    runHooks(this.beforeHooks, data, () => {
-      const route_id = storeAdd(data);
-      const url = matched.path + '?route_id=' + route_id;
-      fn({
-        url
-      });
-    });
+    return fn({ url: matched.path});
   }
+
+  const data = {
+    path: matched.path,
+    query: query || {},
+    params: params || {},
+    meta: matched.meta
+  };
+
+  runHooks(this.beforeHooks, data, () => {
+    let url = matched.path + '?'
+    if (query) {
+      url += qs.stringify(query)
+    } else {
+      const route_id = storeAdd(data);
+      url += matched.path + '?route_id=' + route_id;
+    }
+    
+    fn({url});
+  });
+
 };
 
 function runHooks(hooks, param, cb) {
   const len = hooks.length;
+
   const next = i => () => {
     if (i >= len) {
       return cb(param);

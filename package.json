@@ -10,7 +10,7 @@
     "dev:h5": "npm run gen:H5 && cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve",
     "dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch",
     "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js",
-    "gen:H5": "cross-env APP_NAME=H5 node gen-config.js"
+    "gen:H5": "cross-env APP_NAME=H5 node gen.config.js"
   },
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.0-23720191024001",
