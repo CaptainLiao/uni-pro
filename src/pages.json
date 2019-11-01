@@ -1,10 +1,8 @@
 {
   "pages": [
-    // #ifdef H5-WEIXIN
     {
       "path": "pages/index/index"
     },
-    // #endif
     {
       "path": "pages/hello"
     },

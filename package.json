@@ -56,7 +56,6 @@
     "Android >= 4.4",
     "ios >= 8"
   ],
-  // https://uniapp.dcloud.io/collocation/package
   "uni-app": {
     "scripts": {
       "h5-weixin": {
