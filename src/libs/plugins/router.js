@@ -41,17 +41,14 @@ function install(Vue) {
   Vue.mixin({
     onLoad(query) {
       const route_id = query && query.route_id;
-      let data = {};
+      const data = {};
       if (route_id) {
         data = storeGet(route_id) || {};
       } else {
+        const pages = getCurrentPages();
         data.query = query;
-        if (getCurrentPages) {
-          let pages = getCurrentPages();
-          ({
-            [pages.length - 1]: { route: data.path }
-          } = pages);
-        }
+        data.path = pages[pages.length - 1].route;
+        //;({[pages.length - 1]: {route: data.path}} = pages)
       }
 
       this._route = {
