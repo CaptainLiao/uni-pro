@@ -13,9 +13,11 @@ function loginWeixin ({ target_url } = {}) {
 
     window.addEventListener('pageshow', onPageShow)
 
-    const redirect_uri = encodeURIComponent(`${process.env.AUTH_HOST}/wx_oauth2_callback?target_url=${encodeURIComponent(target_url)}`)
-    const appid = `${process.env.WX_APPID}`
-    window.location = `https://open.weixin.qq.com/connect/oauth2/authorize?redirect_uri=${redirect_uri}&appid=${appid}&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect`
+    const redirect_uri = encodeURIComponent(`http://viptest.allinpayhb.com/tl/wx_oauth2_callback?target_url=${encodeURIComponent(target_url)}`)
+    const appid = 'wx4f846ad0880d1fcf' || `${process.env.WX_APPID}`
+    // 微信会对授权链接做正则强匹配校验，如果链接的参数顺序不对，授权页面将无法正常访问
+    const u = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${redirect_uri}&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect`
+    window.location = u
   })
 
 }

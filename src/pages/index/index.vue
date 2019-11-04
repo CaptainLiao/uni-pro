@@ -8,12 +8,14 @@
 			<text class="title">appid {{appid}}</text>
 		</view>
 		<button @click="toHello">toHello</button>
+		<button @click="toAuth">toAuth</button>
 	</view>
 </template>
 
 <script>
-import Vue from 'vue';
-export default Vue.extend({
+import auth from "@/libs/authentication/weixin"
+
+export default {
 	data() {
 		return {
 			title: 'Hello',
@@ -31,10 +33,16 @@ export default Vue.extend({
 					text: 'Fuck you'
 				}
 			})
+		},
+
+		toAuth() {
+			auth.login({target_url: location.href})
+				.then(res => console.log(res))
+				.catch(err => console.error(err))
 		}
 
 	}
-});
+}
 </script>
 
 <style>

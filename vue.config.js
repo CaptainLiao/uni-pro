@@ -2,8 +2,9 @@ const path = require('path')
 const NODE_ENV = process.env.NODE_ENV
 
 const GLOBAL_CONFIG = {
-  APP_VERSION: '20191031', // 更新版本号后会情况 localStorage
-  WX_APPID: '65516561615651',
+  APP_VERSION: '"20191031"', // 更新版本号后会情况 localStorage
+  WX_APPID: '"wx2df2c123812bc1ab"',
+  AUTH_HOST: '"http://127.0.0.1:8081"',
   eruda: NODE_ENV === 'development' && JSON.stringify('//cdn.jsdelivr.net/npm/eruda')
 }
 
