@@ -41,7 +41,7 @@ function install(Vue) {
   Vue.mixin({
     onLoad(query) {
       const route_id = query && query.route_id;
-      const data = {};
+      let data = {};
       if (route_id) {
         data = storeGet(route_id) || {};
       } else {

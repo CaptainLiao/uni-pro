@@ -25,7 +25,9 @@ if (process.env.UNI_PLATFORM === 'app-plus' && process.env.UNI_USING_V8) {
         }
       }
     ])
-  } catch (e) {}
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 process.UNI_LIBRARIES = process.UNI_LIBRARIES || ['@dcloudio/uni-ui']
