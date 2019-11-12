@@ -141,7 +141,7 @@ Router.prototype.proxy = function proxy(opt, fn, noQuery) {
 
   const data = {
     path: matched.path,
-    query: query || {},
+    query,
     params: params || {},
     meta: matched.meta
   };
@@ -152,7 +152,7 @@ Router.prototype.proxy = function proxy(opt, fn, noQuery) {
       url += qs.stringify(query)
     } else {
       const route_id = storeAdd(data);
-      url += matched.path + '?route_id=' + route_id;
+      url += 'route_id=' + route_id;
     }
     
     fn({url});
