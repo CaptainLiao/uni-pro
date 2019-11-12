@@ -12,10 +12,11 @@
   ],
 
   "globalStyle": {
+    // #ifdef h5
     "navigationStyle": "custom",
-    "navigationBarTextStyle": "black",
+    // #endif
     "navigationBarTitleText": "演示",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
   }
 }

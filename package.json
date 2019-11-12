@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "build": "npm run build:h5",
-    "lint": "vue-cli-service lint",
-    "build:h5": "npm run gen:H5 && cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build",
-    "build:mp-weixin": "cross-env NODE_ENV=production UNI_PLATFORM=mp-weixin vue-cli-service uni-build",
     "dev": "npm run dev:h5",
-    "dev:h5": "npm run gen:H5 && cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve",
-    "dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch",
-    "gen:H5": "cross-env APP_NAME=H5 node gen.config.js",
+    "lint": "vue-cli-service lint",
+    "build:h5": "npm run gen:h5 && cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build",
+    "dev:h5": "npm run gen:h5 && cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve",
+    "gen:h5": "cross-env APP_NAME=h5 node gen.config.js",
+    "build:mp-weixin": "npm run gen:mp-weixin && cross-env NODE_ENV=production UNI_PLATFORM=mp-weixin vue-cli-service uni-build",
+    "dev:mp-weixin": "npm run gen:mp-weixin && cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch",
+    "gen:mp-weixin": "cross-env APP_NAME=p-weixin node gen.config.js",
     "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js"
   },
   "dependencies": {
@@ -82,7 +83,7 @@
           "UNI_PLATFORM": "h5"
         },
         "define": {
-          "H5-WEIXIN": true
+          "h5-WEIXIN": true
         }
       }
     }
