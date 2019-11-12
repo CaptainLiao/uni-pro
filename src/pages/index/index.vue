@@ -1,6 +1,5 @@
 <template>
 	<view class="content">
-		<image class="logo" src="../../static/logo.png"></image>
 		<view>
 			<text class="title">{{title}}</text>
 		</view>
@@ -9,11 +8,15 @@
 		</view>
 		<button @click="toHello">toHello</button>
 		<button @click="toAuth">toAuth</button>
+
+		<c-steps></c-steps>
 	</view>
 </template>
 
 <script>
 import auth from "@/libs/authentication/weixin"
+
+import CSteps from '@/components/c-steps'
 
 export default {
 	data() {
@@ -22,9 +25,11 @@ export default {
 			appid: process.env.WX_APPID
 		}
 	},
-	onLoad() {
 
+	components: {
+		CSteps
 	},
+	
 	methods: {
 		toHello() {
 			this.$Router.push({
@@ -47,7 +52,6 @@ export default {
 
 <style>
 .content {
-	text-align: center;
 	height: 400upx;
 }
 

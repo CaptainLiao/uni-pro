@@ -41,3 +41,9 @@ html {
 .a-text-center {
   text-align: center;
 }
+
+.a-text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
