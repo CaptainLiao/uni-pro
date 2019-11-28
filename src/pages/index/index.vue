@@ -10,6 +10,8 @@
 		<button @click="toAuth">toAuth</button>
 
 		<c-steps></c-steps>
+
+		<div class="a-radio a-checked"></div>
 	</view>
 </template>
 
