@@ -19,6 +19,12 @@
       "mode": "history",
       "base": "/"
     },
+    // https://juejin.im/post/5d3d8946e51d45775e33f659
+    "devServer": {
+      "disableHostCheck": true,
+      "host": "m.liaofy.com",
+      "port": 8080
+    },
     "optimization": {
       "treeShaking": {
         //"enable": true
