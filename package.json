@@ -54,7 +54,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "postcss-comment": "^2.0.0",
     "sass": "^1.23.1",
     "sass-loader": "^8.0.0",
