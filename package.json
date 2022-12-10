@@ -25,7 +25,7 @@
     "@dcloudio/uni-mp-weixin": "^2.0.0-23720191024001",
     "@dcloudio/uni-stat": "^2.0.0-23720191024001",
     "flyio": "^0.6.2",
-    "qs": "^6.9.0",
+    "qs": "^6.9.7",
     "regenerator-runtime": "^0.12.1",
     "vue": "^2.6.10",
     "vue-class-component": "^6.3.2",
